@@ -1,0 +1,1 @@
+{"name": "01-your-task-is-to-create-a-singl-firebase-141228", "spec": {"port": 8000, "containers": [{"image": "", "name": "01-your-task-is-to-create-a-singl-firebase-141228", "port": 8000, "registry_secret": "benchmarks-docker-credentials"}]}}
