@@ -35,6 +35,13 @@ jobs:
         with:
           tags: type=sha
           images: ${{ secrets.DOCKER_USERNAME }}/${{ env.DOCKER_REPO_NAME }}
+          labels: |
+            org.opencontainers.image.title=${{ env.DOCKER_REPO_NAME }}
+            org.opencontainers.image.description=Quome Benchmark Application
+            org.opencontainers.image.url=${{ github.server_url }}/${{ github.repository }}
+            org.opencontainers.image.source=${{ github.server_url }}/${{ github.repository }}
+            org.opencontainers.image.revision=${{ github.sha }}
+            org.opencontainers.image.created=${{ github.event.head_commit.timestamp }}
 
       - name: Build and push Docker image
         id: push
