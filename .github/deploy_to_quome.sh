@@ -1,6 +1,6 @@
 set -e
 
-app_spec=$(cat "./app_spec.json" | jq --arg img_tag $TAG '.spec.containers[0].image = $img_tag')
+app_spec=$(cat "./app_spec.json" | jq --arg img_tag "$TAG" '.spec.containers[0].image = $img_tag')
 
 RESPONSE=$(curl -L -s -m 30 -w "\nStatus Code: %{http_code}\n" -X PUT \
 	-H "Content-Type: application/json" \
